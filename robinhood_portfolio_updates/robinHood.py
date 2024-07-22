@@ -46,7 +46,6 @@ if login_response.get('access_token'):
     email_subject  = 'Daily Portfolio Update'
     email_body = ''
 
-
     if day_change > 0:
         day_change_message = f"We're up ${day_change:.2f} today!!!\n"
     else:
@@ -54,7 +53,6 @@ if login_response.get('access_token'):
 
     print(day_change_message)
     email_body += day_change_message + "\n"
-
 
     #fetches current holdings
     holdings = r.account.build_holdings()
@@ -91,8 +89,6 @@ if login_response.get('access_token'):
         except Exception as e:
             print(f"Failed to find {symbol} news \n error: {str(e)}")
 
-        
-
     #total account value
     total_val_msg = "\nTotal Account Value: ${:.2f}".format(total_value)
     print(total_val_msg)
@@ -117,9 +113,7 @@ if login_response.get('access_token'):
         print(f"\nFailed to send email, error: {str(e)}")
     finally:
         context.quit()
-
-
-
+        
 else:
     print("Login failed:", login_response)
 
