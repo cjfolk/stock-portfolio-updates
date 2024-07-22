@@ -12,7 +12,7 @@ import os
 load_dotenv()
 
 #gnews setup 
-gnews_key = os.getenv('GNEW_API_KEY')
+gnews_key = os.getenv('GNEWS_API_KEY')
 gn_instance  = gn(gnews_key)
 gn_instance.period = '7d'
 gn_instance.max_results = 2
